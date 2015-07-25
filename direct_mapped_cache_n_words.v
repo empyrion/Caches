@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module unified_cache_n_words(clka, rsta, wea, addra, dina, fetch_ack, flush_ack, douta, flush, fetch, hit);
+module direct_mapped_cache_n_words(clka, rsta, wea, addra, dina, fetch_ack, flush_ack, douta, flush, fetch, hit);
 
   // Size parameter
   parameter size = 1024;
