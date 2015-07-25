@@ -3,9 +3,10 @@ Verilog open-source cache implementations
 
 ## Synopsis
 This project is indended to be a playground of sorts where the author attempts to apply theoretical aspects of CPU design to build a variety of cache designs coupled with an inherent SRAM which could at any moment be replaced by a DRAM controller and physical DRAM memory.
+The project is intended to be synthesizable; the FPGA used by the author is the classic Spartan3E XC3S500 with a DVK600 Board and various extension modules.
 
 ## Motivation
-The primary engine behind the writing of this project is to develop a sense of breadth of scope in implementing various **Verilog** designs aimed at building up confidence towards the implementation of a fully functional CPU like ORSoC.  
+The primary engine behind the writing of this project is to develop a sense of breadth of scope in implementing various **Verilog** designs aimed at building up confidence towards the implementation of a fully functional CPU like ORSoC. The first step is confidently building a clearly documented, fully-pipelined, RISC MCU/MPU hybrid device which can be thoroughly tested and used in various embedded applications.  
 
 ## Installation
 git clone the required files and open the .xise in Xilinx ISE Project Navigator, preferably version 12.2 or above.
