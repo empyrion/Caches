@@ -20,10 +20,15 @@ $RECYCLE.BIN/
 # Other Xilinx stuff
 *.exe
 *.prj
+*.gise
+*.wdb
 xilinxsim.ini
 isim.*
 fuse.log
 isim\
+isim*
+_xmsgs\
+_xmsgs
 
 # =========================
 # Operating System Files
