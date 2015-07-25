@@ -25,9 +25,7 @@ $RECYCLE.BIN/
 xilinxsim.ini
 isim.*
 fuse.log
-isim\
-isim*
-_xmsgs\
+isim
 _xmsgs
 
 # =========================
