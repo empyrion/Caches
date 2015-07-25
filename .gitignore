@@ -53,3 +53,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.gise
+*.wdb
+isim/isim_usage_statistics.html
+*.sdb
+isim/work/glbl.sdb
+*.obj
+*.log
+isim/test_unified_cache_isim_beh.exe.sim/ISimEngine-DesignHierarchy.dbg
+isim/*.*
+isim

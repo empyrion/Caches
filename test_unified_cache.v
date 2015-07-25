@@ -47,7 +47,7 @@ module test_unified_cache;
   // Cache 1024 words of 32 bits, 12 bits of max address associated
 	unified_cache_n_words #(1024, 12, 32) uut (
 		.clka(clka), 
-		.rsta(rsta), 
+		.rsta(rsta),
 		.wea(wea), 
 		.addra(addra), 
 		.dina(dina), 
