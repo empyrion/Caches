@@ -23,6 +23,7 @@ $RECYCLE.BIN/
 xilinxsim.ini
 isim.*
 fuse.log
+isim\*.*
 
 # =========================
 # Operating System Files
@@ -48,3 +49,4 @@ fuse.log
 Network Trash Folder
 Temporary Items
 .apdisk
+*.gise
