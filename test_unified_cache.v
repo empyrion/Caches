@@ -45,7 +45,7 @@ module test_unified_cache;
 	// Instantiate the Unit Under Test (UUT)
   //(clka, rsta, wea, addra, dina, fetch_ack, flush_ack, douta, flush, fetch, hit);
   // Cache 1024 words of 32 bits, 12 bits of max address associated
-	unified_cache_1024_words #(1024, 12, 32) uut (
+	unified_cache_n_words #(1024, 12, 32) uut (
 		.clka(clka), 
 		.rsta(rsta), 
 		.wea(wea), 

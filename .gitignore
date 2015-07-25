@@ -23,7 +23,7 @@ $RECYCLE.BIN/
 xilinxsim.ini
 isim.*
 fuse.log
-isim\*.*
+isim\
 
 # =========================
 # Operating System Files
