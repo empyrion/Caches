@@ -17,6 +17,13 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Other Xilinx stuff
+*.exe
+*.prj
+xilinxsim.ini
+isim.*
+fuse.log
+
 # =========================
 # Operating System Files
 # =========================
