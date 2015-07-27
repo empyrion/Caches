@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Xilinx/Projects/Caches/test_quad_port_ram_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="test_quad_port_ram" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="3" />
+   <wvobject fp_name="group21" type="group">
+      <obj_property name="label">Inputs</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/test_quad_port_ram/clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#ffff00</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_quad_port_ram/data_a" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_a[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_quad_port_ram/data_b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_b[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_b[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_quad_port_ram/addr_a" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr_a[5:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_a[5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#0000ff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_quad_port_ram/addr_b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr_b[5:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_b[5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#0000ff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_quad_port_ram/addr_c" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr_c[5:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_c[5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#0000ff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_quad_port_ram/addr_d" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr_d[5:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_d[5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#0000ff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_quad_port_ram/we_a" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">we_a</obj_property>
+         <obj_property name="ObjectShortName">we_a</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#00ff00</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_quad_port_ram/we_b" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">we_b</obj_property>
+         <obj_property name="ObjectShortName">we_b</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#00ff00</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group22" type="group">
+      <obj_property name="label">Outputs</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/test_quad_port_ram/q_a" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">q_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">q_a[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_quad_port_ram/q_b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">q_b[31:0]</obj_property>
+         <obj_property name="ObjectShortName">q_b[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_quad_port_ram/q_c" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">q_c[31:0]</obj_property>
+         <obj_property name="ObjectShortName">q_c[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test_quad_port_ram/q_d" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">q_d[31:0]</obj_property>
+         <obj_property name="ObjectShortName">q_d[31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/test_quad_port_ram/ALL_OK" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ALL_OK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALL_OK[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

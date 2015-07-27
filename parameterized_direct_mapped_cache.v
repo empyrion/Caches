@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company:        ADDA Ltd.
+// Engineer:       Dragos-Ronald Rugescu
 // 
 // Create Date:    17:29:42 07/06/2015 
 // Design Name: 
@@ -18,31 +18,32 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module direct_mapped_cache_n_words(clka, rsta, wea, addra, dina, fetch_ack, flush_ack, douta, flush, fetch, hit);
+module parameterized_direct_mapped_cache(clka, rsta, wea, addra, dina, fetch_ack, flush_ack, douta, flush, fetch, hit);
 
   // Size parameter
-  parameter size = 1024;
-  parameter address_space = 12;
-  parameter data_size = 32;
+  parameter SIZE                = 1024; // Cache size in words
+  parameter ADDRESS_SPACE       = 12;   // Of the entire memory
+  parameter DATA_SIZE           = 32;   // The word size
+  parameter CACHE_ADDRESS_SPACE = 10;   // The rest of the addresses wrap around
 
   // Inputs
-  input clka;                          // Clock
-  input rsta;                          // Reset
-  input [0:0] wea;                     // Write Enable
-  input [address_space-1:0] addra;     // we only have 9:0 addresses in, but max mem space is 31:0
-                                       // in final circuit. For now it is 11:0 in onboard ram
-  input [data_size-1:0] dina;          // Data in
-  input fetch_ack;                     // When RAM find information and places it on the data b
-  input flush_ack;                     // When RAM acknowledges the receipt of data
+  input clka;                           // Clock
+  input rsta;                           // Reset
+  input [0:0] wea;                      // Write Enable
+  input [ADDRESS_SPACE-1:0] addra;      // Max mem space is 31:0 in final circuit. 
+                                        //   For now it is 11:0 in onboard ram
+  input [DATA_SIZE-1:0] dina;           // Data in
+  input fetch_ack;                      // When RAM find information and places it on the data b
+  input flush_ack;                      // When RAM acknowledges the receipt of data
 
   // Outputs
-  output reg [data_size-1:0] douta;    // Data Out
-  output reg flush;                    // Signal sent to RAM
-  output reg fetch;
-  output reg hit;
+  output reg [DATA_SIZE-1:0] douta;     // Data Out
+  output reg flush;                     // Signal sent to RAM Controller
+  output reg fetch;                     // Signal sent to RAM Controller
+  output reg hit;                       // Signal sent to CPU
 
   // The actual memory
-  reg [address_space + data_size - 1:0]    mem [0:size-1]; // 12b address tag + 32b data
+  reg [ADDRESS_SPACE + DATA_SIZE - 1:0]    mem [0:SIZE-1]; // ADRESS_SPCACEb address tag + DATA_SIZEb data
   
   parameter STATE_FLUSHING = 1;
   parameter STATE_FETCHING = 2;
@@ -64,8 +65,8 @@ module direct_mapped_cache_n_words(clka, rsta, wea, addra, dina, fetch_ack, flus
     if ((STATE == STATE_FETCHING) & fetch_ack)  // If main RAM gives us data
     begin
       // Write it into cache and output it
-      mem[addra[9:0]] <= {addra, dina};
-      douta <= mem[addra[9:0]][31:0];
+      mem[addra[CACHE_ADDRESS_SPACE-1:0]] <= {addra, dina};
+      douta <= mem[addra[CACHE_ADDRESS_SPACE-1:0]][31:0];
       hit <= 1;
       fetch <= 0;
       STATE <= STATE_NORMAL;
@@ -86,10 +87,10 @@ module direct_mapped_cache_n_words(clka, rsta, wea, addra, dina, fetch_ack, flus
       
       if (!rsta && !wea)
       begin
-        if (mem[addra[9:0]][43:32] == addra)
+        if (mem[addra[CACHE_ADDRESS_SPACE-1:0]][43:32] == addra)
         begin
           // If we have that address in the cache it's a hit
-          douta <= mem[addra[9:0]][31:0];
+          douta <= mem[addra[CACHE_ADDRESS_SPACE-1:0]][31:0];
           hit <= 1;
           $display("Cache hit. Outputting data.");
         end
@@ -106,8 +107,8 @@ module direct_mapped_cache_n_words(clka, rsta, wea, addra, dina, fetch_ack, flus
       // The write is flushed immediately to the RAM
       if (!rsta && wea) 
       begin
-        mem[addra[9:0]] <= {addra, dina};
-        douta <= mem[addra[9:0]][31:0];
+        mem[addra[CACHE_ADDRESS_SPACE-1:0]] <= {addra, dina};
+        douta <= mem[addra[CACHE_ADDRESS_SPACE-1:0]][31:0];
         flush <= 1;
         hit <= 0;
         $display("Writing to cache and flushing.");
