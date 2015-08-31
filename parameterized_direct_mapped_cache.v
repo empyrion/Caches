@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module parameterized_direct_mapped_cache(clka, rsta, wea, addra, dina, fetch_ack, flush_ack, douta, flush, fetch, hit);
 
-  // Size parameter
+  // Parameters (and their default values)
   parameter SIZE                = 1024; // Cache size in words
   parameter ADDRESS_SPACE       = 12;   // Of the entire memory
   parameter DATA_SIZE           = 32;   // The word size
@@ -43,7 +43,7 @@ module parameterized_direct_mapped_cache(clka, rsta, wea, addra, dina, fetch_ack
   output reg hit;                       // Signal sent to CPU
 
   // The actual memory
-  reg [ADDRESS_SPACE + DATA_SIZE - 1:0]    mem [0:SIZE-1]; // ADRESS_SPCACEb address tag + DATA_SIZEb data
+  reg [ADDRESS_SPACE + DATA_SIZE - 1:0]    mem [0:SIZE-1]; // ADRESS_SPACEb address tag + DATA_SIZEb data
   
   parameter STATE_FLUSHING = 1;
   parameter STATE_FETCHING = 2;

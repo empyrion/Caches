@@ -35,20 +35,18 @@ module parameterized_quad_port_ram(data_a, data_b, addr_a, addr_b, addr_c, addr_
 	output reg [DATA_SIZE-1:0] q_a, q_b, q_c, q_d;
 
 	// Declare the RAM variable
-	reg [ADDRESS_SPACE-1:0] ram[0:SIZE-1];
+	reg [DATA_SIZE-1:0] ram[SIZE-1:0];
 	
 	// Port A - Read/Write
 	always @ (posedge clk)
 	begin
 		if (we_a) 
 		begin
+        $display("PORT A: Latched value <<%d>> into location %d", data_a, addr_a);
         ram[addr_a] <= data_a;
-        q_a <= data_a;
 		end
-		else 
-		begin
-			  q_a <= ram[addr_a];
-		end
+    $display("PORT A: Outputting value <<%d>> from location %d", ram[addr_a], addr_a);
+    q_a <= ram[addr_a];
 	end
 	
 	// Port B - Read/Write
@@ -56,24 +54,24 @@ module parameterized_quad_port_ram(data_a, data_b, addr_a, addr_b, addr_c, addr_
 	begin
     if (we_b)
     begin
+        $display("PORT B: Latched value <<%d>> into location %d", data_b, addr_b);
         ram[addr_b] <= data_b;
-        q_b <= data_b;
     end
-    else
-    begin
-        q_b <= ram[addr_b];
-    end
+    $display("PORT B: Outputting value <<%d>> from location %d", ram[addr_b], addr_b);
+    q_b <= ram[addr_b];
 	end
 
 	// Port C - Read Only
 	always @ (posedge clk)
 	begin
+      $display("PORT C: Outputting value <<%d>> from location %d", ram[addr_c], addr_c);
       q_c <= ram[addr_c];
 	end
 	
 	// Port C - Read Only
 	always @ (posedge clk)
 	begin
+      $display("PORT D: Outputting value <<%d>> from location %d", ram[addr_d], addr_d);
       q_d <= ram[addr_d];
 	end
 

@@ -70,7 +70,7 @@ module test_quad_port_ram;
 
     forever #15 clk = ~clk;
   end
-
+  
 	initial begin
 		// Initialize Inputs
 		data_a = 0;
@@ -123,14 +123,14 @@ module test_quad_port_ram;
     we_b = 0;
     addr_a = 30;
     data_a = 12345;
-    #1;
-    we_a = 1;
     @(posedge clk);
     we_a = 0;
-    #1;
     addr_a = 0;
+    addr_b = 22;
     addr_c = 30;
     @(posedge clk);
+    @(posedge clk);
+    //#1; // Necessary to propagate
     if ((q_a != 111) || (q_b != 2100100100) || (q_c != 12345))
     begin
       $display("ERROR! Result a,b,c = %d,%d,%d should be %d,%d,%d", q_a, q_b, q_c, 111, 2100100100, 12345);

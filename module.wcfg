@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Xilinx/Projects/Caches/test_cache_to_memory_module_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="test_cache_to_memory_module" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/test_cache_to_memory_module/hit" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">hit</obj_property>
+      <obj_property name="ObjectShortName">hit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/rsta" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rsta</obj_property>
+      <obj_property name="ObjectShortName">rsta</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/wea" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wea</obj_property>
+      <obj_property name="ObjectShortName">wea</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">din[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/ALL_OK" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ALL_OK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALL_OK[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/uut/hit" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">hit</obj_property>
+      <obj_property name="ObjectShortName">hit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/uut/flush_ack" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flush_ack</obj_property>
+      <obj_property name="ObjectShortName">flush_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/uut/fetch_ack" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fetch_ack</obj_property>
+      <obj_property name="ObjectShortName">fetch_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/uut/wea_ram" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wea_ram</obj_property>
+      <obj_property name="ObjectShortName">wea_ram</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/uut/flush" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flush</obj_property>
+      <obj_property name="ObjectShortName">flush</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_cache_to_memory_module/uut/fetch" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fetch</obj_property>
+      <obj_property name="ObjectShortName">fetch</obj_property>
+   </wvobject>
+</wave_config>
