@@ -59,7 +59,7 @@ module parameterized_direct_mapped_cache(clka, rsta, wea, addra, dina, fetch_ack
       hit <= 1;
       flush <= 0;
       STATE <= STATE_NORMAL;
-      $display("Flush acknowledged. Enter normal state.");
+      $display("Flush acknowledged by RAM. Enter normal state.");
     end
     
     if ((STATE == STATE_FETCHING) & fetch_ack)  // If main RAM gives us data
@@ -70,7 +70,7 @@ module parameterized_direct_mapped_cache(clka, rsta, wea, addra, dina, fetch_ack
       hit <= 1;
       fetch <= 0;
       STATE <= STATE_NORMAL;
-      $display("Fetch acknowledged. Enter normal state. Outputting data.");
+      $display("Fetch acknowledged by RAM, which sent the data. Enter normal state. Outputting data to CPU.");
     end
     
     if (STATE == STATE_NORMAL)
@@ -92,7 +92,7 @@ module parameterized_direct_mapped_cache(clka, rsta, wea, addra, dina, fetch_ack
           // If we have that address in the cache it's a hit
           douta <= mem[addra[CACHE_ADDRESS_SPACE-1:0]][31:0];
           hit <= 1;
-          $display("Cache hit. Outputting data.");
+          $display("Cache hit. Outputting data to CPU.");
         end
         else
         begin
@@ -111,7 +111,7 @@ module parameterized_direct_mapped_cache(clka, rsta, wea, addra, dina, fetch_ack
         douta <= mem[addra[CACHE_ADDRESS_SPACE-1:0]][31:0];
         flush <= 1;
         hit <= 0;
-        $display("Writing to cache and flushing.");
+        $display("Writing to cache and flushing to RAM, waiting for it to FACK...");
         STATE <= STATE_FLUSHING;
       end
     end
